@@ -4,7 +4,7 @@
 ---
 
 ### **Description**
-In this new game, "JAM TIME!" exercise your skills as a musician. Listen to the rhythm of the beat and repeat the musical sequences. Each level increases in difficulty. Shows us what you got!  
+In this new game, "JAM TIME!" exercise your skills as a musician. Listen to the different instrument sounds and repeat the musical sequences. Each level increases in difficulty. Shows us what you got!  
 
 ### **How To Play**
 1. Click the start button to begin.
