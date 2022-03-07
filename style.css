@@ -9,6 +9,10 @@ body {
 h1 {
   font-family: 'Coiny', sans-serif;
   font-size: 75px;
+  text-align: left;
+  position: fixed;
+  top: 200px;
+  left: 50px;
   color: rgb(251, 0, 255);
   text-shadow:
     0 0 7px #fff,
@@ -23,15 +27,19 @@ h1 {
 
 #allInstruments {
   display: grid;
+  justify-content: right;
   grid-template-columns: 200px 200px;
   grid-template-rows: 200px 200px;
   column-gap: 70px;
   row-gap: 70px;
-  justify-content: right;
+  padding: 8em 10em;
 }
 
 .startGame {
   font-family: 'Coiny', sans-serif;
   font-size: 20px;
   background-color: white;
+  position: fixed;
+  top: 400px;
+  left: 50px;
 }
