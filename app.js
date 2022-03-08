@@ -5,21 +5,17 @@ const startButton = document.querySelector('.startGame')
 
 let computer =[]
 let player =[]
+let round = 0
+
+let musicSequence = Math.floor((Math.random() * 4) + 1)
+console.log(musicSequence)
 
 
-for (let i=0; i < 4; i++) {
-  
-}
 
 
 
 
 // Event Listeners Here
-// const pressButtons = () => {
-
-// }
 const startGame = () => {
-  instruIcons.forEach((instruButton) => {
-    instruButton.addEventListener('click', clicked)
-  })
-}
+  startButton.addEventListener('click', startGame)
+  }
