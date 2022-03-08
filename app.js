@@ -1,15 +1,25 @@
 // Global Variables
-const instrumentIcons = document.querySelector('#instruments')
-const instrumentButton = document.querySelector('.insButton')
+const instruIcons = document.querySelector('#allInstruments')
+const instruButton = document.querySelector('#buttonImage')
 const startButton = document.querySelector('.startGame')
 
 let computer =[]
 let player =[]
 
 
+for (let i=0; i < 4; i++) {
+  
+}
+
+
+
+
 // Event Listeners Here
+// const pressButtons = () => {
+
+// }
 const startGame = () => {
-  instrumentIcons.forEach((instrumentButton) => {
-    instrumentButton.addEventListener('click', clicked)
+  instruIcons.forEach((instruButton) => {
+    instruButton.addEventListener('click', clicked)
   })
 }

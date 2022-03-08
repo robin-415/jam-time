@@ -30,9 +30,45 @@ h1 {
   justify-content: right;
   grid-template-columns: 200px 200px;
   grid-template-rows: 200px 200px;
-  column-gap: 70px;
-  row-gap: 70px;
+  column-gap: 50px;
+  row-gap: 50px;
   padding: 8em 10em;
+}
+
+#micImage {
+  background-image: url("https://i.ibb.co/m5v5nB2/MIC.png");
+  background-position: center;
+  background-color: transparent;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+}
+
+#keysImage {
+  background-image: url("https://i.ibb.co/ccxW7pk/KEYS.png");
+  background-position: center;
+  background-color: transparent;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+}
+
+#guitarImage {
+  background-image: url("https://i.ibb.co/4wLb14R/GUITAR.png");
+  background-position: center;
+  background-color: transparent;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+}
+
+#drumsImage {
+  background-image: url("https://i.ibb.co/80QkYKM/DRUMS.png");
+  background-position: center;
+  background-color: transparent;
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
 }
 
 .startGame {
