@@ -6,18 +6,15 @@ const startButton = document.querySelector('.startGame')
 
 let computer =''
 let player =''
-let round = ''
+let round = 0
 
-const level = () => {
-  document.getElementById("rounds").innerHTML = 
-  round += 1
+instruIcons.onclick = function () {
+  round +=1
+  document.getElementById('rounds').innerHTML = round
 }
-
-// document.getElementById("rounds").innerHTML = 
-
 // Music Sequence
-let musicSequence = Math.floor((Math.random() * 4) + 1)
-console.log(musicSequence)
+// let musicSequence = Math.floor((Math.random() * 4) + 1)
+// console.log(musicSequence)
 
 // Event Listeners Here
 const startGame = () => {
