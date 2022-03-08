@@ -2,24 +2,38 @@
 const instruIcons = document.querySelector('#allInstruments')
 const instruButton = document.querySelector('#buttonImage')
 const startButton = document.querySelector('.startGame')
-// const levelText = document.querySelector('h2')
 
-let computer =''
-let player =''
 let round = 0
 
+// Increases Round Indicator
 instruIcons.onclick = function () {
   round +=1
   document.getElementById('rounds').innerHTML = round
 }
-// Music Sequence
-// let musicSequence = Math.floor((Math.random() * 4) + 1)
-// console.log(musicSequence)
+
+// Computer Round
+const iconArray = [{'id':'micImage'}, {'id':'keysImage'}, {'id':'guitarImage'}, {'id':'drumsImage'}] 
+
+computerSeq = []
+function sequence () {computerSeq.push(iconArray[Math.floor((Math.random() * 4) + 1)])}
+console.log(computerSeq)
+
+// run loop to compare to arrays
+
+// Player Round
+function playerRound () {
+
+}
+
+// const beginRound = function () {
+  let musicSequence = Math.floor((Math.random() * 4) + 1)
+  console.log(musicSequence)
 
 // Event Listeners Here
 const startGame = () => {
   startButton.addEventListener('click', startGame)
   }
+  // window.onload = startGame
 
 startGame()
 
