@@ -2,54 +2,95 @@
 const instruIcons = document.querySelector('#allInstruments')
 const instruButton = document.querySelector('#buttonImage')
 const startButton = document.querySelector('.startGame')
+const notifyMessage = document.querySelector('.message')
+const roundDisplay = document.querySelector('.rounds')
 
-let round = 0
+let roundNum = 0
+let compSeq = []
+let playerSeq = []
 
-// Increases Round Indicator
-instruIcons.onclick = function () {
-  round +=1
-  document.getElementById('rounds').innerHTML = round
+// Start Game
+function startGame () {
+    compSeq = []
+    playerSeq = []
+    roundNum = 0
+    active = true
+  }
+
+// Increases Round Number Indicator
+function roundNum () {
+  roundNum +=1
+  document.getElementById('rounds').innerHTML = roundNum
 }
 
-// Computer Round
-const iconArray = [{'id':'micImage'}, {'id':'keysImage'}, {'id':'guitarImage'}, {'id':'drumsImage'}] 
-
-computerSeq = []
-function sequence () {computerSeq.push(iconArray[Math.floor((Math.random() * 4) + 1)])}
-console.log(computerSeq)
-
-// run loop to compare to arrays
-
-// Player Round
-function playerRound () {
-
+// Player Clicks
+function clicks (e) {
+  let playerClick = playerSeq()
+  let compClick = $(e.target).instruButton
+  active = (playerClick === compClick)
+  verifyRound()
 }
 
-// const beginRound = function () {
-  let musicSequence = Math.floor((Math.random() * 4) + 1)
-  console.log(musicSequence)
+function verifyRound (){
+  if (playerSeq.length === compSeq.length && active) {
+    startGame()
+   } else if (!active) {
+      gameOver()
+    }
+  }
+
+//Sequences
+function gameSeq () {
+  computerSeq.push(iconArray[Math.floor((Math.random() * 4) + 1)])
+  }
+
+ function nextSeq () {
+  computerSeq.push(iconArray[Math.floor((Math.random() * 4) + 1)])
+  roundNum ++
+  playerSeq()
+ }
+
+
+
+
+
+ // EXTRAS //
+
+  // const iconArray = [{'id':'micImage'}, {'id':'keysImage'}, {'id':'guitarImage'}, {'id':'drumsImage'}] 
+
+  // Button Functions
+  // function compRound (e) {
+  //   switch (e) {
+  //     case 1:
+  //       setTimeout(function () {
+  //         .removeEventListener('click')
+  //       }, 1.5 * 1000)
+  //       break
+  //     case 2:
+  //       setTimeout(function () {
+  //         .removeEventListener('click')
+  //       }, 1.5 * 1000)
+  //       break
+  //       case 3:
+  //       setTimeout(function () {
+  //         .removeEventListener('click')
+  //       }, 1.5 * 1000)
+  //       break
+  //       case 4:
+  //       setTimeout(function () {
+  //         .removeEventListener('click')
+  //       }, 1.5 * 1000)
+  //       break
+  //   }
+  // }
+//   
+//   
 
 // Event Listeners Here
 const startGame = () => {
   startButton.addEventListener('click', startGame)
+  instruIcons.addEventListener('click')
   }
-  // window.onload = startGame
 
-startGame()
-
-// Timeout Function or Remove Event Listener?
-// const iconArray = ['micImage', 'keysImage', 'guitarImage', 'drumsImage'] - not sure if I can call this an array?
-// iconArray.time = function (property) {
-//   console.log(arguments.length > 0 ? this[property] : this)
-// }
-// setTimeout(iconArray.method, 1.5*1000, '1')
-// https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
-// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
-
-// Notify player Win/Loss
-// function notify (){
-// }
-
-// Audio Files for Instruments
-// https://www.delftstack.com/howto/javascript/play-audio-javascript/
-// https://www.w3schools.com/jsref/met_audio_play.asp
+// startGame()
+  
