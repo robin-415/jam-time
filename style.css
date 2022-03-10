@@ -57,7 +57,8 @@ h2 {
 #i0 {
   background-image: url("https://i.ibb.co/ccxW7pk/KEYS.png");
   background-position: center;
-  background-color: transparent;
+  border-color: black;
+  border-width: thick;
   height: 220px;
   width: 220px;
   border-radius: 50%;
@@ -66,7 +67,8 @@ h2 {
 #i1 {
   background-image: url("https://i.ibb.co/4wLb14R/GUITAR.png");
   background-position: center;
-  background-color: transparent;
+  border-color: black;
+  border-width: thick;
   height: 220px;
   width: 220px;
   border-radius: 50%;
@@ -75,7 +77,8 @@ h2 {
 #i2 {
   background-image: url("https://i.ibb.co/X8m0TvC/BASS.png");
   background-position: center;
-  background-color: transparent;
+  border-color: black;
+  border-width: thick;
   height: 220px;
   width: 220px;
   border-radius: 50%;
@@ -84,7 +87,8 @@ h2 {
 #i3 {
   background-image: url("https://i.ibb.co/80QkYKM/DRUMS.png");
   background-position: center;
-  background-color: transparent;
+  border-color: black;
+  border-width: thick;
   height: 220px;
   width: 220px;
   border-radius: 50%;

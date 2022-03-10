@@ -3,71 +3,74 @@ const instruIcons = document.querySelector('#allInstruments')
 const instruButtons = document.querySelectorAll('.buttonImage')
 const startButton = document.querySelector('.startGame')
 const notifyMessage = document.querySelector('.message')
-const roundDisplay = document.querySelector('.rounds')
+const roundDisplay = document.querySelector('#nums')
+const randomNum = (Math.floor(Math.random() * 4) +1)
+
+let keysAudio = document.getElementById('sounds0')
+let guitarAudio = document.getElementById('sounds1')
+let drumsAudio = document.getElementById('sounds2')
+let bassAudio = document.getElementById('sounds3')
 
 let roundNum = 0
 let compSeq = []
 let playerSeq = []
+let gameSeq = []
+let sound = true
+let time = 0
+let round = []
 
-// Start Game
-function startGame () {
-    compSeq = []
-    playerSeq = []
-    roundNum = 0
-    active = true
-    computerSeq() //call computer sequence 
+function game () {
+  gameSeq = []
+  playerSeq = []
+  roundNum = 0
+  active = true
+  roundDisplay.innerText = '1'
+  for (let i = 0; i < 10; i++) {
+    gameSeq.push(randomNum)
+  }
+  time = setInterval(nextRound, 1000)
   }
 
-  function gameSeq () {
-    const buttonArray = ['0', '1', '2', '3']  // find the length of the computerSeq.length 
-    const randomButton = buttonArray[Math.floor(Math.random() * buttonArray.length)] // find a random button from the instrument buttons array 
-    
-    randomButton.push(computerSeq())// push random button into computerSeq array
-
-    // play all buttons in computer sequence array
-    playerSeq () // players turn
-    
-    if (playerSeq.length === computerSeq.length) {
-      nextSeq ()
-    }
-  // listen for player input, push into player sequence array
-  // when player sequence array is the same as computer sequence array check for winner
-
-function computerSeq () {
-  const gameSeq = randomButton.push(computerSeq())
-  roundNum +=1
+function nextRound (){
+  if (sound == round) {
+    clearInterval(time)
+    compSeq = false
+    playerSeq = true
+  }
+  if (compSeq) {
+    setTimeout(() => {
+    clicks ()
+      sound++
+    }, 300)
+  }
 }
 
-// function playerSeq (){
-//  const playerClick = 
-// }
-
-// function nextSeq (){
-
-// }
-
-// Increases Round Number Indicator
-function roundNum () {
-  roundNum +=1
-  document.getElementById('rounds').innerHTML = roundNum
+function clicks() {
+if (keysAudio){
+  sound = true
+  document.getElementById('i0').style.borderColor = 'yellow'
+}
+if (guitarAudio){
+  sound = true
+  document.getElementById('i1').style.borderColor = 'yellow'
+}
+if (drumsAudio){
+  sound = true
+  document.getElementById('i2').style.borderColor = 'yellow'
+}
+if (bassAudio){
+  sound = true
+  document.getElementById('i3').style.borderColor = 'yellow'
+}
 }
 
-// Player Clicks
-function clicks (e) {
-  let playerClick = playerSeq()
-  // let compClick = $(e.target).instruButton targeting an array
-  active = (playerClick === compClick)
-  verifyRound()
+function verifyRound () {
+  if (playerSeq.length === compSeq.length) {
+    notifyMessage.innerHTML = 'Winner!'
+    if (playerSeq[playerSeq.length - 1] !== gameSeq[playSeq.length - 1])
+    active = false
+  }
 }
-
-// Verify Round (Loss)
-// function verifyRound (){
-//   if (playerSeq.length === compSeq.length && active) {
-//     startGame()
-//   } else if (!active) {
-//       gameOver()
-//     }
-//   }
 
 // Game Over
 // function gameOver () {
@@ -75,37 +78,14 @@ function clicks (e) {
 // }
 
 // Event Listeners Here
-const startGame = () => {
-  startButton.addEventListener('click', gameSeq)
-  }
+startButton.addEventListener('click', (event) => {
+  game()
+  })
 
 
- // EXTRAS //
-  // Button Functions
-  // function compRound (e) {
-  //   switch (e) {
-  //     case 1:
-  //       setTimeout(function () {
-  //         .removeEventListener('click')
-  //       }, 1.5 * 1000)
-  //       break
-  //     case 2:
-  //       setTimeout(function () {
-  //         .removeEventListener('click')
-  //       }, 1.5 * 1000)
-  //       break
-  //       case 3:
-  //       setTimeout(function () {
-  //         .removeEventListener('click')
-  //       }, 1.5 * 1000)
-  //       break
-  //       case 4:
-  //       setTimeout(function () {
-  //         .removeEventListener('click')
-  //       }, 1.5 * 1000)
-  //       break
-  //   }
-  // }
-//   
-//   
-  }
+// instruButtons.addEventListener('click', (event) => {
+//   playerSeq.push()
+//   clicks()
+//   verifyRound()
+// }
+// )
