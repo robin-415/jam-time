@@ -54,7 +54,7 @@ h2 {
   padding: 8em 10em;
 }
 
-#keysImage {
+#i0 {
   background-image: url("https://i.ibb.co/ccxW7pk/KEYS.png");
   background-position: center;
   background-color: transparent;
@@ -63,7 +63,7 @@ h2 {
   border-radius: 50%;
 }
 
-#guitarImage {
+#i1 {
   background-image: url("https://i.ibb.co/4wLb14R/GUITAR.png");
   background-position: center;
   background-color: transparent;
@@ -72,7 +72,7 @@ h2 {
   border-radius: 50%;
 }
 
-#bassImage {
+#i2 {
   background-image: url("https://i.ibb.co/X8m0TvC/BASS.png");
   background-position: center;
   background-color: transparent;
@@ -81,7 +81,7 @@ h2 {
   border-radius: 50%;
 }
 
-#drumsImage {
+#i3 {
   background-image: url("https://i.ibb.co/80QkYKM/DRUMS.png");
   background-position: center;
   background-color: transparent;

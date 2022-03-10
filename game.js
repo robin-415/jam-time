@@ -15,8 +15,36 @@ function startGame () {
     playerSeq = []
     roundNum = 0
     active = true
-    // call computer sequence 
+    computerSeq() //call computer sequence 
   }
+
+  function gameSeq () {
+    const buttonArray = ['0', '1', '2', '3']  // find the length of the computerSeq.length 
+    const randomButton = buttonArray[Math.floor(Math.random() * buttonArray.length)] // find a random button from the instrument buttons array 
+    
+    randomButton.push(computerSeq())// push random button into computerSeq array
+
+    // play all buttons in computer sequence array
+    playerSeq () // players turn
+    
+    if (playerSeq.length === computerSeq.length) {
+      nextSeq ()
+    }
+  // listen for player input, push into player sequence array
+  // when player sequence array is the same as computer sequence array check for winner
+
+function computerSeq () {
+  const gameSeq = randomButton.push(computerSeq())
+  roundNum +=1
+}
+
+// function playerSeq (){
+//  const playerClick = 
+// }
+
+// function nextSeq (){
+
+// }
 
 // Increases Round Number Indicator
 function roundNum () {
@@ -32,48 +60,27 @@ function clicks (e) {
   verifyRound()
 }
 
-function verifyRound (){
-  if (playerSeq.length === compSeq.length && active) {
-    startGame()
-  } else if (!active) {
-      gameOver()
-    }
-  }
-
-//Sequences
-function gameSeq () {
-  // find the length of the computerSeq.length 
-  // find a random button from the instrument buttons array
-  // push random button into computerSeq array
-  // play all buttons in computer sequence array
- // players turn
- // listen for player input, push into player sequence array
- // when player sequence array is the same as computer sequence array check for winner
-  computerSeq.push(iconArray[Math.floor((Math.random() * 4) + 1)])
-  }
-
-function nextSeq () {
-  computerSeq.push(iconArray[Math.floor((Math.random() * 4) + 1)])
-  roundNum ++
-  playerSeq()
-}
+// Verify Round (Loss)
+// function verifyRound (){
+//   if (playerSeq.length === compSeq.length && active) {
+//     startGame()
+//   } else if (!active) {
+//       gameOver()
+//     }
+//   }
 
 // Game Over
-function gameOver () {
-  document.getElementById('message').innerHTML = 'Game Over!'
-}
+// function gameOver () {
+//   document.getElementById('message').innerHTML = 'Game Over!'
+// }
 
 // Event Listeners Here
 const startGame = () => {
-  startButton.addEventListener('click', startGame)
-  instruIcons.addEventListener('click')
+  startButton.addEventListener('click', gameSeq)
   }
 
 
  // EXTRAS //
-
-  // const iconArray = [{'id':'micImage'}, {'id':'keysImage'}, {'id':'guitarImage'}, {'id':'drumsImage'}] 
-
   // Button Functions
   // function compRound (e) {
   //   switch (e) {
@@ -101,8 +108,4 @@ const startGame = () => {
   // }
 //   
 //   
-
-
-
-// startGame()
-  
+  }
