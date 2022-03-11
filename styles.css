@@ -7,26 +7,23 @@ body {
 .text{
   background-color: white;
   opacity: 0.60;
-  padding: 20px
+  padding: 50px
 }
 
 h1 {
   font-family: 'Coiny', sans-serif;
-  font-size: 55px;
-  /* text-align: left;
-  position: fixed;
-  top: 200px;
-  left: 50px; */
+  font-size: 65px;
   color: rgb(251, 0, 255);
-  text-shadow:
+  line-height: 20px;
+  /* text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
+    0 0 10px #0fa,
     0 0 20px #0fa,
+    0 0 25px #0fa,
     0 0 40px #0fa,
-    0 0 35px #0fa,
-    0 0 50px #0fa,
-    0 0 90px #0fa;
+    0 0 70px #0fa; */
 }
 
 h2, ol, p {
