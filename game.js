@@ -21,7 +21,7 @@ let playerSeq = []
 let gameSeq = []
 let played = true
 let time = 0
-let round = []
+let round = 0
 
 // Game Functions - Initialize Game, Player, New Round, Verify
 function game () {
@@ -30,55 +30,69 @@ function game () {
   roundNum = 0
   roundDisplay.innerText = '1'
   randomSeq ()
-  time = setInterval(newRound, 500)
+  newRound()
+  // time = setInterval(newRound, 500)
   }
 
 function randomSeq () {
-  for (let i = 0; i < 20; i++) {
-    gameSeq.push(Math.floor(Math.random() * 4) +1)
-  }
-}  
-// Round Sequence
-// function newRound () { 
-  // game.roundNum += 1
-//   $(`#allInstruments`).addClass
-//   setTimeout(function(){
-//   $(`#allinstruments`).removeClass
-//   }, 300)
-// }
-
-// Player Turn
-
-// Computer Turn
-// function newRound() {
-//   resetGame()
-// }
-
-// function createSeq (){
-//   game.gameSeq.push(randomNum)
-// 
-
-function newRound (){
-  if (played == round) {
-    compSeq = false
-    playerSeq = true
-    clearInterval(time)
-  }
-  if (compSeq) {
-      keys()
-      guitar()
-      drums()
-      bass()
+    for (let i = 0; i < 20; i++) {
+      gameSeq.push(Math.floor(Math.random() * 4) +1)
     }
-  }
+  }  
+
+  // Computer - Set Timeout Function to toggle (repeat) in/out of class, simulates one second press (once), loop over the array, next loop toggle class & settimeout, in between each iteration
+  function newRound (){
+    if (played == round) {
+      compSeq = false
+      playerSeq = true
+      // clearInterval(time)
+    }
+    if (compSeq) {
+        keys()
+        guitar()
+        drums()
+        bass()
+      }
+      setTimeout(newRound,500)
+    }
+// function computerRound () {
+//   if (round > 0) {
+//     for (let i = 0; i < compSeq.length; i++) {
+//       if (compSeq[i] === 1){
+//         $('#i0').addClass('tap')
+//         setTimeout(function () {
+//           $('#i0').removeClass('tap')
+//         }, 200)
+//       }
+//     } else if (compSeq[i] === 2){
+//       $('#i0').addClass('tap')
+//       setTimeout(function () {
+//         $('#i0').removeClass('tap')
+//       }, 200)
+//     } else if (compSeq[i] === 3){
+//     $('#i0').addClass('tap')
+//     setTimeout(function () {
+//       $('#i0').removeClass('tap')
+//     }, 200)
+//     } else if (compSeq[i] === 4){
+//     $('#i0').addClass('tap')
+//     setTimeout(function () {
+//       $('#i0').removeClass('tap')
+//     }, 200)
+//     }
+//   }
+// }
 
 function verifyRound () {
-if (playerSeq.length === compSeq.length) {
-      notifyMessage.innerHTML = 'Winner!'
-      if (playerSeq[playerSeq.length - 1] !== gameSeq[playerSeq.length - 1])
-      played = false
+  if (playerSeq.length === compSeq.length) {
+        notifyMessage.innerHTML = 'Winner!'
+        if (playerSeq[playerSeq.length - 1] !== gameSeq[playerSeq.length - 1])
+        played = false
+      }
     }
-  }
+
+// Player Round
+// user capturing button presses - pushing into the player's array, Compare to computer's array
   
 
 // function resetGame() {
@@ -91,36 +105,41 @@ if (playerSeq.length === compSeq.length) {
 function keys() {
   if (played) {
   keysButton.style.borderColor = 'yellow'
+  keysButton.classList.toggle('.tap')
   played = true
   keysAudio.play()
   }
-  setTimeout(300)
+  setTimeout(keys, 200)
 }
 
 function guitar() {
   if (played) {
   guitarButton.style.borderColor = 'yellow'
+  keysButton.classList.toggle('.tap')
   played = true
   guitarAudio.play()
   }
-  setTimeout(300)
+  setTimeout(guitar, 200)
+
 }
 
 function drums() {
   if (played) {
   drumsButton.style.borderColor = 'yellow'
+  keysButton.classList.toggle('.tap')
   played = true
   drumsAudio.play()
   }
-  setTimeout(300)
+  setTimeout(drums, 200)
 }
 function bass() {
   if (played) {
   bassButton.style.borderColor = 'yellow'
+  keysButton.classList.toggle('.tap')
   played = true
   bassAudio.play()
   }
-  setTimeout(300)
+  setTimeout(bass, 200)
 }
 
 
@@ -133,3 +152,4 @@ function bass() {
 startButton.addEventListener('click', (event) => {
   game()
   })
+

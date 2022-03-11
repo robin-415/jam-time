@@ -111,3 +111,13 @@ h2 {
   top: 420px;
   left: 150px;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: transparent;
+}
+
+.tap {
+  border-color: black;
+}

@@ -37,5 +37,9 @@ h2, ol, p {
   position: absolute;
   right: 10px;
   top: 650px;
-  /* left: 50px; */
+}
+
+a {
+  text-decoration: none;
+  border-bottom: transparent;
 }
